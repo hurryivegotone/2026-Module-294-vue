@@ -1,0 +1,16 @@
+body {
+  text-align: center;
+}
+.table {
+  width: 320px;
+  margin: 20px auto;
+}
+.table th {
+  text-align: left;
+}
+.table td {
+  text-align: right;
+}
+button + button {
+  margin-left: 20px;
+}

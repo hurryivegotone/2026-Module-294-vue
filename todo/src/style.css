@@ -1,0 +1,36 @@
+.is-done {
+text-decoration: line-through;
+}
+
+.high-priority {
+font-weight: bold;
+color: red;
+}
+
+.form-group {
+display: block;
+}
+
+.form-group label {
+display: block;
+margin-bottom: 2px;
+}
+
+.form-control {
+width: 100%;
+padding: 2px 5px;
+height: 32px;
+margin-bottom: 5px;
+}
+
+.form-actions {
+display: block;
+margin-top: 1rem;
+margin-bottom: 2rem;
+}
+
+.container {
+margin: 20px auto;
+max-width: 400px;
+width: 100%;
+}
