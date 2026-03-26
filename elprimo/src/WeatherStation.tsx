@@ -1,13 +1,22 @@
+import { createSignal } from 'solid-js';
 import { siKelvin, setSiKelvin } from './weatherStore';
 
 const WeatherStation = () => {
-  // this is a comment to display something
-  const degreesCelsius = () => siKelvin() - 273.15;
-  const degreesFahrenheit = () =>
-    (siKelvin() - 273.15) * 9 / 5 + 32;
+  // Explicit signals for Celsius and Fahrenheit
+  const [degreesCelsius, setDegreesCelsius] = createSignal(siKelvin() - 273.15);
+  const [degreesFahrenheit, setDegreesFahrenheit] = createSignal((siKelvin() - 273.15) * 9 / 5 + 32);
 
   const change = (delta: number) => {
-    setSiKelvin(prev => prev + delta);
+    // Update Kelvin
+    setSiKelvin(prevKelvin => {
+      const newKelvin = prevKelvin + delta;
+
+      // Explicitly update derived signals
+      setDegreesCelsius(newKelvin - 273.15);
+      setDegreesFahrenheit((newKelvin - 273.15) * 9 / 5 + 32);
+
+      return newKelvin;
+    });
   };
 
   return (
