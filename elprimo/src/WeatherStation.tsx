@@ -1,6 +1,7 @@
 import { siKelvin, setSiKelvin } from './weatherStore';
 
 const WeatherStation = () => {
+  // this is a comment to display something
   const degreesCelsius = () => siKelvin() - 273.15;
   const degreesFahrenheit = () =>
     (siKelvin() - 273.15) * 9 / 5 + 32;
